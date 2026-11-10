@@ -1,0 +1,420 @@
+/* ================================
+   DONOR DASHBOARD STYLES
+   Load AFTER style.css (uses its variables,
+   navbar, .input-box and .form-group styles)
+================================ */
+
+.dashboard-body {
+    min-height: 100vh;
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+/* ================================
+   NAVBAR EXTRAS
+================================ */
+.dashboard-navbar {
+    margin-top: 12px;
+}
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   CONTAINER + HEADING
+================================ */
+.dashboard-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto 20px;
+    flex: 1;
+}
+
+.dashboard-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 35px;
+    margin-bottom: 28px;
+    background: linear-gradient(145deg, #ed0925, #b90020);
+    border-radius: 24px;
+    color: #ffffff;
+    box-shadow: 0 15px 40px rgba(237, 9, 37, 0.18);
+}
+
+.dashboard-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.dashboard-heading h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 14px 0 8px;
+    letter-spacing: -0.5px;
+}
+
+.dashboard-heading h1 span {
+    color: #ffd9de;
+}
+
+.dashboard-heading p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.welcome-icon {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-radius: 26px;
+    font-size: 40px;
+}
+
+/* ================================
+   SECTIONS (tab switching)
+================================ */
+.dashboard-section {
+    display: none;
+    animation: fadeIn 0.35s ease;
+}
+
+.dashboard-section.active-section {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.section-title h2 i {
+    color: var(--primary);
+}
+
+.section-title p {
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ================================
+   BUTTONS
+================================ */
+.dashboard-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 11px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dashboard-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(237, 9, 37, 0.22);
+}
+
+.save-btn {
+    margin-top: 10px;
+    padding: 14px 26px;
+    font-size: 13px;
+}
+
+/* ================================
+   PROFILE CARD
+================================ */
+.profile-card,
+.edit-card,
+.history-card {
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 12px 35px rgba(30, 40, 60, 0.07);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 24px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--border);
+}
+
+.profile-avatar {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe5e9;
+    color: var(--primary);
+    border-radius: 50%;
+    font-size: 28px;
+}
+
+.profile-header h2 {
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.profile-header p {
+    margin-top: 3px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.blood-badge {
+    margin-left: auto;
+    min-width: 62px;
+    padding: 12px 18px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 14px;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(237, 9, 37, 0.25);
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.profile-item {
+    padding: 16px 18px;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.profile-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.profile-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.profile-item label i {
+    color: var(--primary);
+}
+
+.profile-item p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    word-break: break-word;
+}
+
+.full-profile {
+    grid-column: 1 / -1;
+}
+
+.availability-text {
+    display: inline-block;
+    padding: 4px 14px;
+    background: #e4f8ed;
+    color: var(--green) !important;
+    border-radius: 20px;
+    font-size: 12px !important;
+    text-transform: uppercase;
+}
+
+/* ================================
+   EDIT FORM
+================================ */
+.edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 22px;
+}
+
+.full-edit {
+    grid-column: 1 / -1;
+}
+
+.edit-card .input-box input[readonly] {
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
+.edit-card .input-box:has(input[readonly]) {
+    background: var(--background);
+}
+
+.edit-card .input-box select {
+    cursor: pointer;
+}
+
+/* ================================
+   HISTORY
+================================ */
+.empty-history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.history-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe5e9;
+    color: var(--primary);
+    border-radius: 50%;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.empty-history h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.empty-history p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.empty-history span {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+
+    .profile-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-navbar {
+        gap: 12px;
+    }
+
+    .dashboard-heading {
+        padding: 24px 22px;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 26px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .profile-card,
+    .edit-card,
+    .history-card {
+        padding: 24px 20px;
+    }
+
+    .edit-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+
+    .section-title {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-header {
+        flex-wrap: wrap;
+    }
+
+    .blood-badge {
+        margin-left: 0;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}

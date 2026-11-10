@@ -1,0 +1,1039 @@
+/* ================================
+   GOOGLE FONT
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* ================================
+   GLOBAL STYLES
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #ed0925;
+    --primary-dark: #bd001e;
+    --nav: #343846;
+    --navy: #17243a;
+    --text: #263449;
+    --muted: #8994a5;
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --border: #e5e9f0;
+    --green: #18a66a;
+    --orange: #f39b32;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+/* ================================
+   ADMIN NAVBAR (same as main site)
+================================ */
+.admin-navbar,
+.auth-navbar {
+    width: 90%;
+    max-width: 1250px;
+    height: 65px;
+    margin: 8px auto 0;
+    padding: 0 25px;
+    background: var(--nav);
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 8px;
+    z-index: 100;
+}
+
+/* LOGO: red rounded square + white pulse icon */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 800;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-style: normal;
+}
+
+.dot {
+    color: var(--primary);
+}
+
+.admin-navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.admin-navbar nav a {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 17px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.admin-navbar nav a i {
+    margin-right: 0;
+}
+
+.admin-navbar nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.admin-navbar nav a.active {
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.admin-logout {
+    background: var(--primary);
+    color: #ffffff;
+    padding: 11px 20px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.admin-logout:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* ================================
+   ADMIN DASHBOARD
+================================ */
+.admin-dashboard {
+    max-width: 1200px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* WELCOME SECTION */
+.admin-welcome {
+    background: linear-gradient(120deg, #fff 40%, #fff0f2);
+    border: 1px solid #f5dce1;
+    border-radius: 18px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 30px rgba(30, 40, 60, 0.04);
+}
+
+.admin-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffe8ec;
+    color: var(--primary);
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-welcome h1 {
+    color: var(--navy);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 16px 0 10px;
+}
+
+.admin-welcome p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.welcome-icon {
+    width: 105px;
+    height: 105px;
+    background: #ffe2e7;
+    color: var(--primary);
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+/* ================================
+   STATISTICS CARDS
+================================ */
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 45px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 20px rgba(20, 35, 55, 0.04);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(20, 35, 55, 0.08);
+}
+
+.stat-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.stat-icon.red {
+    background: #ffe5e9;
+    color: var(--primary);
+}
+
+.stat-icon.green {
+    background: #e2f8ee;
+    color: var(--green);
+}
+
+.stat-icon.orange {
+    background: #fff1df;
+    color: var(--orange);
+}
+
+.stat-card p {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 500;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+    color: var(--navy);
+    margin: 3px 0;
+    font-weight: 800;
+}
+
+.stat-card small {
+    font-size: 11px;
+    color: #a0a8b5;
+}
+
+/* ================================
+   MANAGEMENT SECTION
+================================ */
+.management-section {
+    margin-bottom: 45px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-size: 25px;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+.section-heading p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 23px;
+}
+
+.management-card {
+    background: white;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: 0.3s;
+    display: block;
+}
+
+.management-card:hover {
+    transform: translateY(-6px);
+    border-color: #ffc2cc;
+    box-shadow: 0 12px 30px rgba(30, 40, 60, 0.08);
+}
+
+.management-icon {
+    width: 55px;
+    height: 55px;
+    background: #ffe8ec;
+    color: var(--primary);
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.management-card h3 {
+    color: var(--navy);
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.management-card p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.management-card span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.management-card span i {
+    margin-left: 7px;
+    transition: 0.3s;
+}
+
+.management-card:hover span i {
+    transform: translateX(5px);
+}
+
+/* ================================
+   FOOTER
+================================ */
+.admin-footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    color: #647084;
+}
+
+.admin-footer p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.admin-footer small {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* ================================
+   SEARCH DONORS PAGE
+================================ */
+.donor-search {
+    max-width: 1200px;
+    width: 90%;
+    margin: 45px auto;
+}
+
+.search-heading {
+    margin-bottom: 30px;
+}
+
+.search-heading h1 {
+    font-size: 34px;
+    color: var(--navy);
+    margin: 15px 0 8px;
+    font-weight: 800;
+}
+
+.search-heading h1 span {
+    color: var(--primary);
+}
+
+.search-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* SEARCH BOX */
+.search-box {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 20px rgba(20, 35, 55, 0.04);
+    margin-bottom: 35px;
+}
+
+.search-box form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    align-items: end;
+    gap: 20px;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.search-field label,
+.form-group label {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.search-field input,
+.search-field select {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(237, 9, 37, 0.08);
+}
+
+.search-button {
+    height: 48px;
+    padding: 0 23px;
+    border: none;
+    border-radius: 9px;
+    background: var(--primary);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background: var(--primary-dark);
+}
+
+.search-button i {
+    margin-right: 7px;
+}
+
+/* ================================
+   DONOR RESULTS
+================================ */
+.donor-results {
+    background: white;
+    border-radius: 16px;
+    padding: 28px;
+    border: 1px solid var(--border);
+    box-shadow: 0 5px 20px rgba(20, 35, 55, 0.04);
+}
+
+.results-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.results-heading h2 {
+    color: var(--navy);
+    font-size: 21px;
+}
+
+.results-heading p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.results-count {
+    background: #ffe8ec;
+    color: var(--primary);
+    padding: 9px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* DONOR CARD */
+.donor-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.donor-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    transition: 0.3s;
+}
+
+.donor-card:hover {
+    border-color: #ffb7c2;
+    box-shadow: 0 5px 18px rgba(20, 35, 55, 0.05);
+}
+
+.donor-blood {
+    min-width: 65px;
+    height: 65px;
+    background: #ffe7eb;
+    color: var(--primary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.donor-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.donor-details h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.donor-details p {
+    color: #758196;
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.donor-details p i {
+    color: var(--primary);
+    width: 20px;
+}
+
+.available-status {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 12px;
+    background: #e4f8ed;
+    color: var(--green);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* DONOR ACTIONS */
+.donor-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.donor-actions form {
+    margin: 0;
+}
+
+.edit-btn,
+.delete-btn {
+    border: none;
+    border-radius: 7px;
+    padding: 9px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: #eaf1ff;
+    color: #3971d5;
+}
+
+.edit-btn:hover {
+    background: #3971d5;
+    color: white;
+}
+
+.delete-btn {
+    background: #ffe8ec;
+    color: var(--primary);
+}
+
+.delete-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* NO DONORS */
+.no-donors {
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.no-donors i {
+    font-size: 45px;
+    color: #c5cbd5;
+    margin-bottom: 18px;
+}
+
+.no-donors h3 {
+    color: var(--navy);
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.no-donors p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ================================
+   AUTH PAGES
+   LOGIN AND EDIT DONOR
+================================ */
+.auth-body {
+    min-height: 100vh;
+    background: #f5f7fb;
+}
+
+.auth-navbar {
+    position: relative;
+    top: 0;
+}
+
+.back-home {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 19px;
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.auth-container {
+    width: 90%;
+    max-width: 1150px;
+    min-height: 600px;
+    margin: 45px auto;
+    display: flex;
+    background: white;
+    border-radius: 23px;
+    overflow: hidden;
+    box-shadow: 0 15px 45px rgba(20, 35, 55, 0.10);
+}
+
+/* AUTH FORM CARD */
+.auth-card {
+    flex: 1;
+    padding: 45px 40px;
+    background: white;
+    min-width: 0;
+}
+
+.auth-icon {
+    width: 55px;
+    height: 55px;
+    background: #ffe5e9;
+    color: var(--primary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+.auth-card h1,
+.auth-card h2 {
+    color: var(--navy);
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.auth-subtitle {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+}
+
+/* FORM GROUPS */
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-size: 13px;
+    color: var(--text);
+    background: white;
+    transition: 0.3s;
+}
+
+.form-group input,
+.form-group select {
+    min-height: 47px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(237, 9, 37, 0.08);
+}
+
+/* INPUT WITH ICON */
+.input-box {
+    position: relative;
+}
+
+.input-box i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #a0a9b7;
+}
+
+.input-box input {
+    padding-left: 43px;
+}
+
+/* AUTH BUTTON */
+.auth-button {
+    width: 100%;
+    padding: 15px;
+    background: var(--primary);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: 0.3s;
+}
+
+.auth-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.auth-button i {
+    margin-left: 8px;
+}
+
+/* AUTH FOOTER */
+.auth-footer {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-footer a {
+    color: var(--navy);
+    font-size: 13px;
+}
+
+.auth-footer a:hover {
+    color: var(--primary);
+}
+
+.auth-message {
+    color: var(--primary);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* EDIT CANCEL BUTTON */
+.cancel-edit {
+    display: block;
+    text-align: center;
+    padding: 13px;
+    margin-top: 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cancel-edit:hover {
+    background: #f5f7fb;
+    color: var(--primary);
+}
+
+/* ================================
+   RIGHT SIDE AUTH MESSAGE
+================================ */
+.auth-message.auth-message-panel {
+    background: linear-gradient(145deg, #ed0925, #b90020);
+    color: white;
+}
+
+/* Supports your existing auth-message section */
+.auth-container > .auth-message {
+    flex: 1;
+    background: linear-gradient(145deg, #ed0925, #b90020);
+    color: white;
+    padding: 65px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-container > .auth-message h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.auth-container > .auth-message p {
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.auth-container > .auth-message span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 900px) {
+
+    .admin-dashboard,
+    .donor-search {
+        width: 94%;
+    }
+
+    .admin-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .auth-container {
+        flex-direction: column;
+    }
+
+    .auth-container > .auth-message {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .admin-navbar {
+        width: 95%;
+        height: auto;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    .auth-navbar {
+        width: 95%;
+        height: 58px;
+        padding: 0 15px;
+        border-radius: 16px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 16px;
+    }
+
+    .admin-navbar nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .admin-navbar nav a {
+        padding: 8px 12px;
+    }
+
+    .back-home {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+
+    .admin-dashboard,
+    .donor-search {
+        margin: 25px auto;
+    }
+
+    .admin-welcome {
+        padding: 25px;
+    }
+
+    .admin-welcome h1 {
+        font-size: 24px;
+    }
+
+    .welcome-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+    .admin-stats,
+    .management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box form {
+        grid-template-columns: 1fr;
+    }
+
+    .donor-card {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .donor-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .results-heading {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .auth-container {
+        margin: 20px auto;
+        width: 94%;
+    }
+
+    .auth-card {
+        padding: 30px 22px;
+    }
+
+    .auth-container > .auth-message {
+        padding: 35px 25px;
+    }
+
+    .auth-container > .auth-message h2 {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .admin-welcome {
+        padding: 20px;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+    .donor-results {
+        padding: 18px;
+    }
+
+    .donor-blood {
+        min-width: 50px;
+        height: 50px;
+    }
+
+    .results-heading h2 {
+        font-size: 17px;
+    }
+}
